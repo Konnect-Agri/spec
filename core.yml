@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
-  title: Beckn Core API
-  description: Beckn Core API specification
+  title: KONNECT Core API
+  description: KONNECT Core API specification
   version: 0.9.3
 
 security:
@@ -12,8 +12,8 @@ paths:
   /search:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
-        - Beckn Gateway (BG)
+        - KONNECT Provider Platform (BPP)
+        - KONNECT Gateway (BG)
       description: Search for services by intent
       requestBody:
         description: BAP searches for services
@@ -54,7 +54,7 @@ paths:
   /select:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - KONNECT Provider Platform (BPP)
       description: Select items from the catalog and build your order
       requestBody:
         description: TODO
@@ -98,7 +98,7 @@ paths:
   /init:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - KONNECT Provider Platform (BPP)
       description: Initialize an order by providing billing and/or shipping details
       requestBody:
         description: TODO
@@ -141,7 +141,7 @@ paths:
   /confirm:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - KONNECT Provider Platform (BPP)
       description: Initialize an order by providing billing and/or shipping details
       requestBody:
         description: TODO
@@ -184,7 +184,7 @@ paths:
   /status:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - KONNECT Provider Platform (BPP)
       description: Fetch the latest order object
       requestBody:
         description: TODO
@@ -227,7 +227,7 @@ paths:
   /track:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - KONNECT Provider Platform (BPP)
       description: Track an active order
       requestBody:
         description: TODO
@@ -273,7 +273,7 @@ paths:
   /cancel:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - KONNECT Provider Platform (BPP)
       description: Cancel an order
       requestBody:
         description: TODO
@@ -320,7 +320,7 @@ paths:
   /update:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - KONNECT Provider Platform (BPP)
       description: Remove object
       requestBody:
         description: TODO
@@ -367,7 +367,7 @@ paths:
   /rating:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - KONNECT Provider Platform (BPP)
       description: Provide feedback on a service
       requestBody:
         description: TODO
@@ -406,7 +406,7 @@ paths:
   /support:
     post:
       tags:
-        - Beckn Provider Platform (BPP)
+        - KONNECT Provider Platform (BPP)
       description: Contact support
       requestBody:
         description: TODO
@@ -449,8 +449,8 @@ paths:
   /on_search:
     post:
       tags:
-        - Beckn App Platform (BAP)
-        - Beckn Gateway (BG)
+        - KONNECT App Platform (BAP)
+        - KONNECT Gateway (BG)
       description: Send catalog
       requestBody:
         description: TODO
@@ -494,7 +494,7 @@ paths:
   /on_select:
     post:
       tags:
-        - Beckn App Platform (BAP)
+        - KONNECT App Platform (BAP)
       description: Send draft order object with quoted price for selected items
       requestBody:
         description: TODO
@@ -561,7 +561,7 @@ paths:
   /on_init:
     post:
       tags:
-        - Beckn App Platform (BAP)
+        - KONNECT App Platform (BAP)
       description: Send order object with payment details updated
       requestBody:
         description: TODO
@@ -647,7 +647,7 @@ paths:
   /on_confirm:
     post:
       tags:
-        - Beckn App Platform (BAP)
+        - KONNECT App Platform (BAP)
       description: Send active order object
       requestBody:
         description: TODO
@@ -691,7 +691,7 @@ paths:
   /on_track:
     post:
       tags:
-        - Beckn App Platform (BAP)
+        - KONNECT App Platform (BAP)
       description: Send tracking details of an active order
       requestBody:
         description: TODO
@@ -735,7 +735,7 @@ paths:
   /on_cancel:
     post:
       tags:
-        - Beckn App Platform (BAP)
+        - KONNECT App Platform (BAP)
       description: Send cancellation request_id with reasons list in case of cancellation request. Else send cancelled order object
       requestBody:
         description: TODO
@@ -779,7 +779,7 @@ paths:
   /on_update:
     post:
       tags:
-        - Beckn App Platform (BAP)
+        - KONNECT App Platform (BAP)
       description: Returns updated service with updated runtime object
       requestBody:
         description: TODO
@@ -823,7 +823,7 @@ paths:
   /on_status:
     post:
       tags:
-        - Beckn App Platform (BAP)
+        - KONNECT App Platform (BAP)
       description: Fetch the status of a Service
       requestBody:
         description: TODO
@@ -867,7 +867,7 @@ paths:
   /on_rating:
     post:
       tags:
-        - Beckn App Platform (BAP)
+        - KONNECT App Platform (BAP)
       description: Provide feedback on a service
       requestBody:
         description: TODO
@@ -906,7 +906,7 @@ paths:
   /on_support:
     post:
       tags:
-        - Beckn App Platform (BAP)
+        - KONNECT App Platform (BAP)
       description: Contact Support
       requestBody:
         description: TODO
@@ -1591,7 +1591,7 @@ components:
         tags:
           $ref: "#/components/schemas/Tags"
     Context:
-      description: Describes a beckn message context
+      description: Describes a KONNECT message context
       type: object
       properties:
         domain:
@@ -1606,7 +1606,7 @@ components:
           $ref: "#/components/schemas/Block/properties/name"
         action:
           type: string
-          description: Defines the Beckn API call. Any actions other than the enumerated actions are not supported by Beckn Protocol
+          description: Defines the KONNECT API call. Any actions other than the enumerated actions are not supported by KONNECT Protocol
           enum:
             - search
             - select
@@ -1630,7 +1630,7 @@ components:
             - on_support
         core_version:
           type: string
-          description: Version of Beckn core API specification being used
+          description: Version of KONNECT core API specification being used
         bap_id:
           type: string
           format: uri
@@ -1758,7 +1758,7 @@ components:
             - JSON-SCHEMA-ERROR
         code:
           type: string
-          description: "Beckn specific error code. For full list of error codes, refer to error_codes.md in the root folder of this repo"
+          description: "KONNECT specific error code. For full list of error codes, refer to error_codes.md in the root folder of this repo"
         path:
           type: string
           description: Path to json schema generating the error. Used only during json schema validation errors
@@ -2008,7 +2008,7 @@ components:
         tags:
           $ref: "#/components/schemas/Tags"
     Language:
-      description: indicates language code. Beckn supports country codes as per ISO 639.2 standard
+      description: indicates language code. KONNECT supports country codes as per ISO 639.2 standard
       type: object
       properties:
         code:
@@ -2467,7 +2467,7 @@ components:
           $ref: "#/components/schemas/Country/properties/code"
         signing_public_key:
           type: string
-          description: 'Signing Public key of the subscriber. <br/><br/>Any subscriber platform (BAP, BPP, BG) who wants to transact on the network must digitally sign the ```requestBody``` using the corresponding private key of this public key and send it in the transport layer header. In case of ```HTTP``` it is the ```Authorization``` header. <br><br/>The ```Authorization``` will be used to validate the signature of a BAP or BPP.<br/><br/>Furthermore, if an API call is being proxied or multicast by a Beckn Gateway, the BG must use it\''s signing key to digitally sign the ```requestBody``` using the corresponding private key of this public key and send it in the ```X-Gateway-Authorization``` header.'
+          description: 'Signing Public key of the subscriber. <br/><br/>Any subscriber platform (BAP, BPP, BG) who wants to transact on the network must digitally sign the ```requestBody``` using the corresponding private key of this public key and send it in the transport layer header. In case of ```HTTP``` it is the ```Authorization``` header. <br><br/>The ```Authorization``` will be used to validate the signature of a BAP or BPP.<br/><br/>Furthermore, if an API call is being proxied or multicast by a KONNECT Gateway, the BG must use it\''s signing key to digitally sign the ```requestBody``` using the corresponding private key of this public key and send it in the ```X-Gateway-Authorization``` header.'
         encryption_public_key:
           type: string
           description: Encryption public key of the BAP subscriber. Any BPP must encrypt the ```requestBody.message``` value of the ```on_search``` API using this public key.

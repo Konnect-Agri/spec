@@ -1,0 +1,43 @@
+schemas:
+  LoanApplicationDoc:
+    type: object
+    properties:
+      LoanApplicationBasicInfo:
+        type: object
+        properties:
+          sector:
+            $ref: "#/schemas/Domain" (domain from core.yml)
+          project_type:
+            $ref: "#/schemas/Domain" (domain from core.yml)
+          district:
+            $ref: "#/schemas/District"
+          block:
+            $ref: "#/schemas/Block"
+          branch:
+            type: string 
+            # (if required can be shifted to $ref: "#/schemas/Provider/tags/branch" )
+          amount:
+            $ref: "#/schemas/Price"
+      ApplicantDetails:
+      # Approach 1
+        $ref: "#/schemas/Person"
+        required_tags:
+          PANCard:
+            $ref: "#/schemas/Document"
+          AadharCard:
+            $ref: "#/schemas/Document"
+          EducationalQualification:
+            $ref: "#/schemas/Document"
+          MaritalStatus:
+
+# ==================================================================================== #          
+      # Approach 2
+        type: object
+        properties:
+          BasicDetails:
+            $ref: "#/schemas/Person"
+          PANCard: 
+            $ref: "#/schemas/Document"
+          AadharCard: 
+            $ref: "#/schemas/Document"
+                 
