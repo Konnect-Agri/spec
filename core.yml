@@ -99,7 +99,7 @@ paths:
     post:
       tags:
         - KONNECT Provider Platform (BPP)
-      description: Initialize an order by providing billing and/or shipping details
+      description: Initialize a loan application by filling in the loan application form
       requestBody:
         description: TODO
         content:
@@ -2114,6 +2114,7 @@ components:
                 properties:
                   id:
                     $ref: "#/components/schemas/Location/properties/id"
+                  
                 required:
                   - id
         items:
@@ -2145,6 +2146,8 @@ components:
                 $ref: "#/components/schemas/Offer/properties/id"
             required:
               - id
+        loan_application_doc:
+          $ref: './application_doc.yml/components/schemas/LoanApplicationDoc'
         documents:
           type: array
           items:

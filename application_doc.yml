@@ -6,7 +6,7 @@ info:
 paths:
 
 components:
-  schema:
+  schemas:
     CorrespondenceDetails:
       type: object
       properties:
