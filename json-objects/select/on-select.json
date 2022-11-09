@@ -1,0 +1,54 @@
+// the bank takes the order sent by the user in
+// select and adds a loan_application_doc field in
+// adding in a fulfillment person
+
+
+{
+  "context": {
+    "domain": "agriculture",
+    "country": "IND",
+    "state": "ODISHA",
+    "district": "ANGUL",
+    "block": "block",
+    "action": "select",
+    "core_version": "0.9.3",
+    "bap_id": "101",
+    "bap_uri": "http://path/to/bap",
+    "bpp_id": "301",
+    "bpp_uri": "http://path/to/bpp",
+    "transaction_id": "some_transaction_id",
+    "message_id": "some_message_id",
+    "timestamp": "Date.now()"
+  },
+  "message": {
+    "order": {
+      "provider": {
+        "id": "Bank 1",
+        "descriptor": {
+          "name": "Bank 1"
+        },
+        "fulfillments": [{
+          "id": "abc-fulfillment-1",
+          "type": "LOAN_APPLICATION_PROCESSING",
+          "provider_id": "BANK 1",
+          "tracking": true,
+          "customer": {
+            // data here from the query resolver
+          },
+          "agent": {
+            "name": "John Doe",
+            "gender": "M",
+            "phone": "1234567890",
+            "email": "john@example.com"
+          }
+        }],
+        "items": [
+          {
+          "id": "2",
+          "quantity": 1
+          }
+        ]
+      }
+    }
+  }
+}
