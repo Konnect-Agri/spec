@@ -611,6 +611,12 @@ paths:
                             properties:
                               id:
                                 $ref: "#/components/schemas/Offer/properties/id"
+                        loan_application_doc: 
+                          $ref: './core.yml/components/schemas/LoanApplicationDoc'
+                        documents: 
+                          type: array
+                          items:
+                            $ref: '#/components/schemas/Document'
                         billing:
                           $ref: "#/components/schemas/Billing"
                         fulfillment:
