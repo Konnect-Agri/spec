@@ -1,0 +1,99 @@
+openapi: 3.0.0
+info: 
+  title: Konnect Application Document schema
+  description: Konnect Application Document schema
+  version: 0.9.3
+paths:
+
+components:
+  schemas:
+    CorrespondenceDetails:
+      type: object
+      properties:
+        Address: 
+          $ref: "./core.yml/components/schema/Address"
+        Contact:
+          $ref: "./core.yml/components/schema/Contact"
+          # TODO: add a regex for email
+
+    LoanApplicationDoc:
+      type: object
+      properties:
+        application_basic_info:
+          type: object
+          properties:
+            sector:
+              $ref: "./core.yml/components/schemas/Domain" 
+            project_type:
+              $ref: "./core.yml/components/schemas/Domain" 
+            district:
+              $ref: "./core.yml/components/schemas/District"
+            block:
+              $ref: "./core.yml/components/schemas/Block"
+            branch:
+              type: string 
+              # (if required can be shifted to $ref: "#/schemas/Provider/tags/branch" )
+            amount:
+              $ref: "./core.yml/components/schemas/Price"
+
+        applicant_details:
+          type: object
+          properties:
+            basic_details:
+              $ref: "#/schemas/Person"
+              required:
+              - name
+              - gender
+              - dob #Age can be calculated from this no need to add it
+              - tags.marital_status
+              - tags.fathers_name
+              - tags.mothers_name
+            pan_card_number:  
+              type: string
+            aadhar_number: 
+              type: number
+            educatonal_qualification:
+              type: string
+            # changed this from type document to string, since it'll just be the number and we can add the document in the documents field of the order
+
+        temporary_correspondence_details:
+          $ref: "#/schemas/CorrespondenceDetails"
+
+        permanent_correspondence_details:
+          $ref: "#/schemas/CorrespondenceDetails"
+
+        income_details:
+          type: object
+          properties:
+            agricultural_income_source: 
+              type: string
+            agricultural_income: 
+              type: number
+            other_income_source:
+              type: array
+              items: 
+                type: string
+
+            other_income:
+              type: number
+
+            total_income:
+              type: number
+
+        collateral_details:
+          type: # TODO: waiting for complete fields
+
+
+        guarantor_details:
+          type: object
+          properties:
+            name: 
+              $ref: './core/yml/components/schema/Person/name'
+            relationship:
+              type: string
+            mobile:
+              type: number
+            email: 
+              type: string # TODO: add regex for email here
+            pan_card_number:
+              $ref: '#/schema/ApplicantDetails/PANCardNumber'
