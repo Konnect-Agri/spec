@@ -7,22 +7,14 @@ paths:
 
 components:
   schemas:
-    CorrespondenceDetails:
-      type: object
-      properties:
-        Address: 
-          $ref: "./core.yml/components/schema/Address"
-        Contact:
-          $ref: "./core.yml/components/schema/Contact"
-          # TODO: add a regex for email
-
-    LoanApplicationDoc:
+   LoanApplicationDoc:
       type: object
       properties:
         application_basic_info:
           type: object
           properties:
-            sector:
+            domain:
+              description: 
               $ref: "./core.yml/components/schemas/Domain" 
             project_type:
               $ref: "./core.yml/components/schemas/Domain" 
@@ -72,7 +64,12 @@ components:
             other_income_source:
               type: array
               items: 
-                type: string
+                type: object
+                properties : 
+                    descriptor : 
+                        $ref: "#/schemas/descriptor"
+                    amount :
+                        $ref: "#/schemas/price"
 
             other_income:
               type: number
