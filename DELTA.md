@@ -22,6 +22,17 @@ else we can look at an adaptation of Beckn, something on the lines of `DSEP`
 Trying to solve this problem incrementally, by first identifying and mapping the Odisha agri loan use case and then trying to generalise it.
 
 
+## Approach
+
+1. Go through those sheets and try to figure out an exhaustive (90%+ coverage) list of attributes that are required for the finance sector.
+2. Map those to the core spec directly, figure out what can be mapped directly, what is acceptable as tags and XInput, what we absolutely want as first class citizens
+3. Add those items as first class citizens, and get the `ADAPTED` spec reviewed by Ravi and team.
+
+
+## Open Questions
+
+1. Do we think in terms for finance and fintech, or do think in terms of loans only, if loans do we include all types of loans or just mortgages.
+
 ## APIs
 
 ### `search`:
