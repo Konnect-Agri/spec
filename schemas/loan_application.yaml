@@ -14,8 +14,8 @@ components:
           type: object
           properties:
             domain:
-              description: 
-              $ref: "./core.yml/components/schemas/Domain" 
+              descriptor: 
+              $ref: "../transaction.yaml#/components/schemas/Descriptor" 
             project_type:
               $ref: "./core.yml/components/schemas/Domain" 
             district:
